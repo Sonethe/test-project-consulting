@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test task</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+    <div th:if="${!hasText}">
+        <h1>Enter string:</h1>
+        <form th:method="POST" th:action="@{/home}" th:object="${inputText}">
+            <label for="inpText">Enter text:</label>
+            <input name="text" type="text" th:field="*{inpText}" id="inpText"/>
+            <input type="submit" value="Check"/>
+        </form>
+    </div>
+    <div th:if="${hasText}">
+        <h1>Enter string:</h1>
+        <form th:method="POST" th:action="@{/home}" th:object="${inputText}">
+            <label for="inpText2">Enter text:</label>
+            <input name="text" type="text" th:field="*{inpText}" id="inpText2"/>
+            <input type="submit" value="Check"/>
+        </form>
+        <h1>Result:</h1>
+        <p th:text="${text}">VALUE</p>
+        <div th:each="char : ${charMap}" class="charMap">
+            <p th:text="${'''' + char.key + ''': ' + char.value + ' '}">VALUE</p>
+        </div>
+    </div>
+</body>
+</html>

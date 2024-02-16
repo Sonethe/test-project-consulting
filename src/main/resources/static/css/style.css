@@ -1,0 +1,16 @@
+body {
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    padding: 5% 10%;
+}
+div.charMap {
+    display: inline;
+    margin: 0;
+    padding: 4px;
+}
+div.charMap p {
+    display: inline;
+    margin: 0;
+    padding: 4px;
+}
